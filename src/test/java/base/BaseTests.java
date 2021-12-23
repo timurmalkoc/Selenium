@@ -1,7 +1,6 @@
 package base;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -31,7 +30,6 @@ public class BaseTests {
         //driver.close();
         // quit, closes the browser and ends the session
         System.out.println("Total element with a tag = "+ elements.size());
-
         driver.quit();
     }
 
