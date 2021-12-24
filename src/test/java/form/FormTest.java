@@ -12,8 +12,10 @@ public class FormTest extends FormBase{
         formHomePage.setJobTileField("teacher");
         formHomePage.setCollage();
         formHomePage.setMale();
-
+        formHomePage.setExperience(4);
+        formHomePage.setDate("04/09/1987");
         FormyPage formyPage = formHomePage.submit();
         System.out.println(formyPage.getAlert());
+
     }
 }

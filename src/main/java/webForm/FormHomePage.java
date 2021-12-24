@@ -2,6 +2,7 @@ package webForm;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class FormHomePage {
@@ -61,19 +62,22 @@ public class FormHomePage {
     }
 
     public void setExperience(int year){
-        int value;
+        int index;
         if (year>=0 && year<=1)
-            value = 0;
+            index = 0;
         else if (year>=2 && year<=4)
-            value = 1;
+            index = 1;
         else if (year>=5 && year<=9)
-            value = 2;
+            index = 2;
         else
-            value =3;
+            index =3;
 
+        Select select = new Select(driver.findElement(experience));
+        select.selectByIndex(index);
     }
 
-    public void setDate(int index){
+    public void setDate(String index){
+        driver.findElement(date).sendKeys(index);
 
     }
 
