@@ -56,6 +56,11 @@ public class HomePage {
         clickLink("Entry Ad");
         return new ModalWindowPage(driver);
     }
+
+    public ContextMenuPage clickContextMenu(){
+        clickLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
     public void clickLink(String link){
         driver.findElement(By.linkText(link)).click();
     }
