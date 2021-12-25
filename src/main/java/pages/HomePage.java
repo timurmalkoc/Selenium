@@ -32,15 +32,21 @@ public class HomePage {
         return new HoversPage(driver);
     }
 
-    public KeyPresses clickKeyPress(){
+    public KeyPressesPage clickKeyPress(){
         clickLink("Key Presses");
-        return new KeyPresses(driver);
+        return new KeyPressesPage(driver);
     }
 
-    public HorizontalSlider clickHorizontalSlider(){
+    public HorizontalSliderPage clickHorizontalSlider(){
         clickLink("Horizontal Slider");
-        return new HorizontalSlider(driver);
+        return new HorizontalSliderPage(driver);
     }
+
+    public AlertPage clickAlert(){
+        clickLink("JavaScript Alerts");
+        return new AlertPage(driver);
+    }
+
     public void clickLink(String link){
         driver.findElement(By.linkText(link)).click();
     }
