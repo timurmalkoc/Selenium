@@ -22,9 +22,9 @@ public class HomePage {
         return new DropDownPage(driver);
     }
 
-    public ForgotPassword clickForgotPassword(){
+    public ForgotPasswordPage clickForgotPassword(){
         clickLink("Forgot Password");
-        return new ForgotPassword(driver);
+        return new ForgotPasswordPage(driver);
     }
 
     public HoversPage clickHovers(){
@@ -60,6 +60,11 @@ public class HomePage {
     public ContextMenuPage clickContextMenu(){
         clickLink("Context Menu");
         return new ContextMenuPage(driver);
+    }
+
+    public FramesPage clickFrame(){
+        clickLink("Frames");
+        return new FramesPage(driver);
     }
     public void clickLink(String link){
         driver.findElement(By.linkText(link)).click();
