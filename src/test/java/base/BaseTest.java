@@ -15,6 +15,13 @@ public class BaseTest {
     public void pageSetup(){
         System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");
         driver = new ChromeDriver();
+
+        // implicit wait
+        // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+        // script timeout -> wait until page sync with other apps like JS.
+
+
         driver.get("https://the-internet.herokuapp.com/");
         goHome();
 
