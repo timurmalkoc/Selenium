@@ -39,4 +39,8 @@ public class DynamicExam1 {
         return driver.findElement(confirmationText).getText();
     }
 
+    public boolean isStartBtnDisplayed(){
+        return driver.findElement(startBtn).isDisplayed();
+    }
+
 }

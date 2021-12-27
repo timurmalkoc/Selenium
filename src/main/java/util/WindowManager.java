@@ -29,14 +29,14 @@ public class WindowManager {
         navigate.to(url);
     }
 
-    public void switchToTab(String tabName){
+    public void switchToTab(String tabName) {
         Set<String> windows = driver.getWindowHandles();
 
-        System.out.println("Number of Tabs: "+ windows.size());
+        System.out.println("Number of Tabs: " + windows.size());
         windows.forEach(System.out::println);
 
-        for (String window:windows){
-            System.out.println("Switching to window : "+window);
+        for (String window : windows) {
+            System.out.println("Switching to window : " + window);
             driver.switchTo().window(window);
 
             System.out.println("Current window title : " + driver.getTitle());
@@ -44,8 +44,20 @@ public class WindowManager {
             if (tabName.equals(driver.getTitle()))
                 break;
         }
-
     }
+        public void switchToTab(int index){
+            Set<String> windows = driver.getWindowHandles();
+            System.out.println("Number of Tabs: " + windows.size());
+            windows.forEach(System.out::println);
+            int count =1;
+            for (String window : windows) {
+                System.out.println("Switching to window : " + window);
+                driver.switchTo().window(window);
 
+                System.out.println("Current window title : " + driver.getTitle());
 
+                if (count == index)
+                    break;
+            }
+    }
 }

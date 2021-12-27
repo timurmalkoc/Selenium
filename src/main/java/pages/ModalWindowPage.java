@@ -15,7 +15,7 @@ public class ModalWindowPage {
 
 
     public void clickClose(){
-        driver.findElement(cancelModel);
+        driver.findElement(cancelModel).click();
     }
 
     public String closeConfirmationText(){
