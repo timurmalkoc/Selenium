@@ -17,4 +17,12 @@ public class NestedFrameTest extends BaseTest {
         String expectedBottom = "BOTTOM";
         assertEquals(nestedFrames.getBottomFrameText(),expectedBottom,"Text does not match");
     }
+
+    @Test
+    public void testNestedMiddle(){
+        FramesPage framesPage = homePage.clickFrame();
+        NestedFramesPage page = framesPage.clickNestedField();
+        System.out.println(page.getMiddleFrameText());
+
+    }
 }

@@ -7,6 +7,7 @@ public class NestedFramesPage {
     private WebDriver driver;
     private By topFrame = By.name("frame-top");
     private By leftFrame = By.name("frame-left");
+    private By middleFrame = By.name("frame-middle");
     private By textArea = By.tagName("body");
 
     private By bottomFrame = By.name("frame-bottom");
@@ -29,6 +30,15 @@ public class NestedFramesPage {
 
     public String getLeftFrameText(){
         switchToLeftFrame();
+        String text = driver.findElement(textArea).getText();
+        switchToParentFrame();
+        return text;
+    }
+    private void switchToMiddleFrame(){
+        driver.switchTo().frame(driver.findElement(topFrame)).switchTo().frame(driver.findElement(middleFrame));
+    }
+    public String getMiddleFrameText(){
+        switchToMiddleFrame();
         String text = driver.findElement(textArea).getText();
         switchToParentFrame();
         return text;
